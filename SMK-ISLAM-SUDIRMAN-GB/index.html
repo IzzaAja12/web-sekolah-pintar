@@ -365,7 +365,7 @@
         border-bottom: 4px solid var(--primary);
       }
 
-      /* MEDIA & VIDEO SECTION */
+      /* MEDIA */
       .gallery {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -385,14 +385,14 @@
         filter: brightness(0.8);
       }
       
-      /* Video Container Styles */
+      /* VIDEO CONTAINER */
       .video-container {
+        position: relative;
+        width: 100%;
         margin-top: 40px;
         border-radius: 20px;
         overflow: hidden;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        position: relative;
-        background: var(--dark);
       }
       
       .video-container iframe {
@@ -402,39 +402,8 @@
         display: block;
       }
       
-      .video-placeholder {
-        width: 100%;
-        height: 500px;
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-align: center;
-        padding: 20px;
-        border-radius: 20px;
-      }
-      
-      .video-placeholder i {
-        font-size: 4rem;
-        margin-bottom: 20px;
-        color: var(--accent);
-      }
-      
-      .video-placeholder h3 {
-        margin-bottom: 10px;
-        font-size: 1.8rem;
-      }
-      
-      .video-placeholder p {
-        opacity: 0.9;
-        max-width: 600px;
-      }
-      
       @media (max-width: 768px) {
-        .video-container iframe,
-        .video-placeholder {
+        .video-container iframe {
           height: 300px;
         }
       }
@@ -599,27 +568,13 @@
           />
         </div>
         
+        <!-- VIDEO DARI GOOGLE DRIVE -->
         <div class="video-container">
-          <!-- Video dari Google Drive menggunakan iframe -->
           <iframe 
             src="https://drive.google.com/file/d/1nIr2ZDvBW9vfKujDbzxPWXrlhmw0QJQB/preview" 
-            allow="autoplay; encrypted-media" 
-            allowfullscreen
-            title="Video Profil SMK Islam Sudirman Grabag">
+            allow="autoplay"
+            allowfullscreen>
           </iframe>
-        </div>
-        
-        <!-- Alternatif jika iframe tidak bekerja -->
-        <div class="video-placeholder" id="videoFallback" style="display: none;">
-          <i class="fas fa-video"></i>
-          <h3>Video Profil SMK Islam Sudirman Grabag</h3>
-          <p>Video sedang dimuat dari Google Drive. Jika video tidak muncul, Anda dapat 
-            <a href="https://drive.google.com/file/d/1nIr2ZDvBW9vfKujDbzxPWXrlhmw0QJQB/view" 
-               target="_blank" 
-               style="color: var(--accent); text-decoration: underline;">
-              menontonnya langsung di Google Drive
-            </a>
-          </p>
         </div>
       </div>
     </section>
@@ -751,29 +706,6 @@
             a.classList.add("active");
           }
         });
-      });
-
-      // Check if iframe is loaded successfully
-      window.addEventListener('load', function() {
-        const iframe = document.querySelector('iframe');
-        const fallback = document.getElementById('videoFallback');
-        
-        // Check if iframe loaded content
-        setTimeout(() => {
-          try {
-            // Try to access iframe content (may be blocked by CORS)
-            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-            if (iframeDoc && iframeDoc.body && iframeDoc.body.innerHTML) {
-              // Iframe loaded successfully
-              console.log('Video iframe loaded successfully');
-            }
-          } catch (e) {
-            // CORS error or iframe failed to load
-            console.log('Iframe loading issue detected, showing fallback');
-            iframe.style.display = 'none';
-            fallback.style.display = 'flex';
-          }
-        }, 2000);
       });
     </script>
   </body>
