@@ -105,6 +105,46 @@
             height: 48px;
             object-fit: contain;
         }
+
+        /* Absensi Digital Styles */
+        .absensi-container {
+            background: linear-gradient(135deg, #f8fafc, #f0fdf4);
+            border: 2px solid #dcfce7;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(34, 197, 94, 0.1);
+        }
+
+        .absensi-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .absensi-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(34, 139, 34, 0.15);
+            border-color: #22c55e;
+        }
+
+        .absensi-card img {
+            transition: transform 0.5s ease;
+        }
+
+        .absensi-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .btn-absensi {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            transition: all 0.3s ease;
+        }
+
+        .btn-absensi:hover {
+            background: linear-gradient(135deg, #16a34a, #15803d);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -129,6 +169,7 @@
                     <a href="#program" class="text-gray-700 hover:text-green-600 transition font-medium">Program</a>
                     <a href="#ekskul" class="text-gray-700 hover:text-green-600 transition font-medium">Ekstrakurikuler</a>
                     <a href="#fasilitas" class="text-gray-700 hover:text-green-600 transition font-medium">Fasilitas</a>
+                    <a href="#absensi" class="text-gray-700 hover:text-green-600 transition font-medium">Absensi Digital</a>
                     <a href="#kontak" class="text-gray-700 hover:text-green-600 transition font-medium">Kontak</a>
                 </div>
 
@@ -143,6 +184,7 @@
                 <a href="#program" class="block text-gray-700 hover:text-green-600 transition">Program</a>
                 <a href="#ekskul" class="block text-gray-700 hover:text-green-600 transition">Ekstrakurikuler</a>
                 <a href="#fasilitas" class="block text-gray-700 hover:text-green-600 transition">Fasilitas</a>
+                <a href="#absensi" class="block text-gray-700 hover:text-green-600 transition">Absensi Digital</a>
                 <a href="#kontak" class="block text-gray-700 hover:text-green-600 transition">Kontak</a>
             </div>
         </div>
@@ -439,6 +481,52 @@
         </div>
     </section>
 
+    <!-- Absensi Digital Section -->
+    <section id="absensi" class="py-20 bg-gradient-to-br from-green-50 to-emerald-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-4 section-title">Absensi Digital</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">Sistem absensi digital modern untuk memudahkan monitoring kehadiran siswa secara real-time</p>
+            
+            <div class="absensi-container max-w-6xl mx-auto p-8 md:p-12">
+                <div class="grid md:grid-cols-3 gap-6 mb-10">
+                    <div class="absensi-card">
+                        <div class="h-48 bg-gradient-to-br from-green-100 to-emerald-100 flex items-center justify-center">
+                            <img src="img/absen1.jpeg" alt="Halaman Login Absensi" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    
+                    <div class="absensi-card">
+                        <div class="h-48 bg-gradient-to-br from-green-100 to-emerald-100 flex items-center justify-center">
+                            <img src="img/absen2.jpeg" alt="Dashboard Absensi" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    
+                    <div class="absensi-card">
+                        <div class="h-48 bg-gradient-to-br from-green-100 to-emerald-100 flex items-center justify-center">
+                            <img src="img/absen3.jpeg" alt="Laporan Orang Tua" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bagian tombol di tengah -->
+                <div class="text-center">
+                    <div class="space-y-6 max-w-2xl mx-auto">
+                        <p class="text-gray-700 text-lg">
+                            Sistem absensi digital kami memudahkan orang tua untuk memantau kehadiran putra-putri secara online, real-time, dan akurat.
+                        </p>
+                        <a href="https://sekolahpintar.my/presensi/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="btn-absensi text-white px-10 py-4 rounded-full font-semibold inline-flex items-center justify-center space-x-3 mx-auto">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Akses Sistem Absensi Digital</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Kontak -->
     <section id="kontak" class="py-20 bg-gradient-to-br from-green-700 to-green-500">
         <div class="container mx-auto px-6">
@@ -563,6 +651,7 @@
                         <li><a href="#program" class="text-gray-400 hover:text-green-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Program</a></li>
                         <li><a href="#ekskul" class="text-gray-400 hover:text-green-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Ekstrakurikuler</a></li>
                         <li><a href="#fasilitas" class="text-gray-400 hover:text-green-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Fasilitas</a></li>
+                        <li><a href="#absensi" class="text-gray-400 hover:text-green-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Absensi Digital</a></li>
                         <li><a href="#kontak" class="text-gray-400 hover:text-green-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Kontak</a></li>
                     </ul>
                 </div>
@@ -650,6 +739,16 @@
             alert('Terima kasih! Pesan Anda telah dikirim. Kami akan segera menghubungi Anda.');
             event.target.reset();
         }
+
+        // Current year for copyright
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearElement = document.createElement('span');
+            yearElement.textContent = new Date().getFullYear();
+            const copyrightText = document.querySelector('footer p.text-gray-400');
+            if (copyrightText) {
+                copyrightText.innerHTML = copyrightText.innerHTML.replace('2025', yearElement.textContent);
+            }
+        });
     </script>
 </body>
 </html>

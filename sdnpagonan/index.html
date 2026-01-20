@@ -362,6 +362,84 @@
             margin-right: 12px;
         }
 
+        /* ========== ABSENSI DIGITAL SECTION ========== */
+        .absensi-container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(94, 64, 55, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            border: 1px solid var(--cream-warm);
+        }
+
+        .absensi-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .absensi-img-wrapper {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(94, 64, 55, 0.1);
+            border: 1px solid var(--cream-warm);
+            transition: transform 0.3s ease;
+        }
+
+        .absensi-img-wrapper:hover {
+            transform: translateY(-5px);
+        }
+
+        .absensi-img-wrapper img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .absensi-img-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .absensi-desc {
+            text-align: center;
+            font-size: 1.15rem;
+            color: var(--dark-brown);
+            max-width: 700px;
+            margin: 10px 0;
+            line-height: 1.7;
+        }
+
+        .btn-absensi {
+            background: var(--moss-green);
+            color: white;
+            font-weight: 600;
+            padding: 15px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(51, 105, 30, 0.3);
+            display: inline-block;
+            border: 2px solid transparent;
+        }
+
+        .btn-absensi:hover {
+            background: transparent;
+            color: var(--moss-green);
+            border-color: var(--moss-green);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(51, 105, 30, 0.4);
+        }
+
         /* ========== FASILITAS / GALERI ========== */
         .gallery-intro {
             text-align: center;
@@ -571,6 +649,7 @@
             }
 
             .card { padding: 2.2rem; }
+            .absensi-container { padding: 25px; }
             
             /* Logo lebih kecil di mobile */
             .logo-img {
@@ -586,11 +665,14 @@
             .hero { margin-top: 70px; }
             .hero-content h1 { font-size: 2.2rem; }
             .logo-text .sekolah { font-size: 1.3rem; }
-            .btn { padding: 0.9rem 2rem; font-size: 1rem; }
+            .btn, .btn-absensi { padding: 0.9rem 2rem; font-size: 1rem; }
             .logo-img {
                 height: 35px;
                 width: 35px;
                 margin-right: 8px;
+            }
+            .absensi-gallery {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -616,6 +698,7 @@
                 <li><a href="#profil" class="nav-link">Profil</a></li>
                 <li><a href="#visi-misi" class="nav-link">Visi & Misi</a></li>
                 <li><a href="#fasilitas" class="nav-link">Fasilitas</a></li>
+                <li><a href="#absensi" class="nav-link">Absensi Digital</a></li>
                 <li><a href="#kontak" class="nav-link">Kontak</a></li>
             </ul>
         </div>
@@ -695,6 +778,36 @@
             <div class="gallery-item">
                 <img src="img/upacara.jpg" alt="Upacara Bendera">
             </div>
+        </div>
+    </section>
+
+    <!-- Absensi Digital -->
+    <section id="absensi">
+        <h2>Absensi Digital</h2>
+        <div class="absensi-container">
+            <div class="absensi-gallery">
+                <div class="absensi-img-wrapper">
+                    <img src="img/absen1.jpeg" alt="Tampilan Absensi Siswa - Halaman Login" />
+                </div>
+                <div class="absensi-img-wrapper">
+                    <img src="img/absen2.jpeg" alt="Tampilan Absensi Siswa - Daftar Kehadiran" />
+                </div>
+                <div class="absensi-img-wrapper">
+                    <img src="img/absen3.jpeg" alt="Tampilan Absensi Orang Tua - Laporan Bulanan" />
+                </div>
+            </div>
+            <p class="absensi-desc">
+                Pantau kehadiran putra-putri Anda secara real-time melalui sistem absensi digital berbasis web. 
+                Orang tua dapat memantau presensi siswa secara online dengan mudah dan praktis.
+            </p>
+            <a
+                href="https://sekolahpintar.my/presensi/"
+                target="_blank"
+                rel="noopener"
+                class="btn-absensi"
+            >
+                Buka Aplikasi Absensi
+            </a>
         </div>
     </section>
 
