@@ -382,6 +382,126 @@
             border-top: 1px solid #eee;
         }
 
+        /* === E-LEARNING === */
+        .elearning-container {
+        max-width: 950px;
+        margin: 0 auto;
+        background: white;
+        padding: 30px;
+        border-radius: 18px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        }
+
+        .elearning-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        width: 100%;
+        max-width: 700px;
+        }
+
+        .elearning-img-wrapper {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .elearning-img-wrapper img {
+        width: 100%;
+        height: auto;
+        display: block;
+        }
+
+        .elearning-desc {
+        text-align: center;
+        font-size: 1.05rem;
+        color: var(--text-dark);
+        max-width: 600px;
+        margin: 0;
+        }
+
+        .btn-elearning {
+        background: var(--secondary);
+        color: white;
+        font-weight: 600;
+        padding: 14px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+        display: inline-block;
+        }
+
+        .btn-elearning:hover {
+        transform: scale(1.03);
+        box-shadow: 0 6px 20px rgba(39, 174, 96, 0.6);
+        }
+
+        /* === BELL SEKOLAH IOT === */
+        .bell-container {
+        max-width: 950px;
+        margin: 0 auto;
+        background: white;
+        padding: 30px;
+        border-radius: 18px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        }
+
+        .bell-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        width: 100%;
+        max-width: 700px;
+        }
+
+        .bell-img-wrapper {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .bell-img-wrapper img {
+        width: 100%;
+        height: auto;
+        display: block;
+        }
+
+        .bell-desc {
+        text-align: center;
+        font-size: 1.05rem;
+        color: var(--text-dark);
+        max-width: 600px;
+        margin: 0;
+        }
+
+        .btn-bell {
+        background: var(--secondary);
+        color: white;
+        font-weight: 600;
+        padding: 14px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+        display: inline-block;
+        }
+
+        .btn-bell:hover {
+        transform: scale(1.03);
+        box-shadow: 0 6px 20px rgba(39, 174, 96, 0.6);
+        }
+
         /* Kontak */
         #contact {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -772,6 +892,68 @@
                 </a>
             </div>
         </div>
+    </section>
+
+    <!-- E-LEARNING PREVIEW -->
+    <section id="elearning" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>E-Learning Sekolah</h2>
+          <div></div>
+        </div>
+        <div class="elearning-container">
+          <div class="elearning-gallery">
+            <div class="elearning-img-wrapper">
+              <img src="assets/img/elearning1.jpeg" alt="Tampilan Dashboard E-Learning Siswa" />
+            </div>
+            <div class="elearning-img-wrapper">
+              <img src="assets/img/elearning2.jpeg" alt="Materi Pelajaran Interaktif" />
+            </div>
+          </div>
+          <p class="elearning-desc">
+            Akses materi pelajaran, tugas, dan kuis secara online kapan saja dan di mana saja.
+          </p>
+          <a
+            href="https://sekolahpintar.my/smpislamsarbini/elearning/"
+            target="_blank"
+            rel="noopener"
+            class="btn-elearning"
+          >
+            Buka Platform E-Learning
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BELL SEKOLAH IOT PREVIEW -->
+    <section id="bell-iot" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Bell Sekolah Otomatis (IoT)</h2>
+          <div></div>
+        </div>
+        <div class="bell-container">
+          <div class="bell-gallery">
+            <div class="bell-img-wrapper">
+              <img src="assets/img/bell1.jpeg" alt="Antarmuka Pengaturan Jadwal Bell" />
+            </div>
+            <div class="bell-img-wrapper">
+              <img src="assets/img/bell2.jpeg" alt="Perangkat IoT Bell Sekolah" />
+            </div>
+          </div>
+          <p class="bell-desc">
+            Sistem bell otomatis berbasis IoT yang akurat, fleksibel, dan dapat dikendalikan dari mana saja.
+          </p>
+          <a
+            href="https://sekolahpintar.my/smpislamsarbini/bell/"
+            target="_blank"
+            rel="noopener"
+            class="btn-bell"
+          >
+            Lihat Demo Bell IoT
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Kontak -->

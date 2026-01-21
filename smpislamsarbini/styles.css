@@ -315,6 +315,126 @@ nav a:hover {
   box-shadow: 0 6px 20px rgba(39, 174, 96, 0.6);
 }
 
+/* === E-LEARNING === */
+.elearning-container {
+  max-width: 950px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.elearning-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.elearning-img-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.elearning-img-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.elearning-desc {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  max-width: 600px;
+  margin: 0;
+}
+
+.btn-elearning {
+  background: var(--secondary);
+  color: white;
+  font-weight: 600;
+  padding: 14px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+  display: inline-block;
+}
+
+.btn-elearning:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.6);
+}
+
+/* === BELL SEKOLAH IOT === */
+.bell-container {
+  max-width: 950px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.bell-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.bell-img-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.bell-img-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bell-desc {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  max-width: 600px;
+  margin: 0;
+}
+
+.btn-bell {
+  background: var(--secondary);
+  color: white;
+  font-weight: 600;
+  padding: 14px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+  display: inline-block;
+}
+
+.btn-bell:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.6);
+}
+
 /* === KONTAK === */
 .contact-container {
   max-width: 700px;
