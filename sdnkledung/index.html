@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SDN Kledung Temanggung - Sekolah Dasar Negeri Unggulan</title>
+    <meta name="keywords" content="SDN Kledung Temanggung, Sekolah Dasar, Pendidikan SD, Temanggung, Sekolah Negeri" />
+    <link rel="icon" href="assets/logo.png" type="image/png" />
+    <meta name="description"
+        content="Website resmi SDN Kledung Temanggung - Sekolah Dasar Negeri yang berkomitmen pada pendidikan berkualitas dan inovasi digital" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        :root {
+            --primary: #0b3ba1;
+            --secondary: #3498db;
+            --light-bg: #f4f7f6;
+            --white: #ffffff;
+            --text-dark: #2d3436;
+            --accent: #e67e22;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* === NAVIGATION === */
+        header {
+            background: rgba(35, 86, 197, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 2000;
+            padding: 10px 0;
+            transition: 0.4s;
+        }
+
+        header.scrolled {
+            background: rgba(26, 60, 183, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 5px 0;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 45px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: var(--font-heading);
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.1rem;
+            line-height: 1.2;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            transition: 0.3s;
+            opacity: 0.8;
+        }
+
+        nav a:hover {
+            opacity: 1;
+            color: var(--secondary);
+        }
+
+        .btn-nav {
+            background: var(--secondary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            opacity: 1 !important;
+            font-weight: 600;
+            color: white !important;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .dropdown-content li {
+            float: none;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color: var(--secondary);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: white;
+            border-radius: 5px;
+            transition: 0.4s;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(30, 43, 107, 0.6), rgba(30, 65, 107, 0.8)),
+                url('assets/bg_header.png');
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+            color: var(--white);
+            padding: 0 2rem;
+            margin-top: 0;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-group a {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            margin: 8px;
+            transition: 0.3s;
+            border: 2px solid var(--secondary);
+        }
+
+        .cta-group a:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* === GENERAL SECTIONS === */
+        .section {
+            padding: 100px 2rem;
+        }
+
+        .bg-light {
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-dark);
+            opacity: 0.8;
+            max-width: 700px;
+            margin: 15px auto 0;
+        }
+
+        /* === PROFIL SEKOLAH === */
+        .profil-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .profil-item {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .profil-item:last-child {
+            border-bottom: none;
+        }
+
+        .profil-item h4 {
+            color: var(--secondary);
+            font-family: var(--font-heading);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .profil-item p {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* === PROGRAM UNGGULAN === */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .program-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .program-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .program-info h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .program-info p {
+            color: var(--text-dark);
+            opacity: 0.8;
+        }
+
+        /* === STATISTIK === */
+        .stats-bar {
+            background: var(--primary);
+            color: white;
+            padding: 50px 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            text-align: center;
+            gap: 30px;
+        }
+
+        .stat-item h4 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* === ABSENSI DIGITAL === */
+        .absensi-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .absensi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .instagram-embed-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 125%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .instagram-embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .absensi-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .absensi-img-wrapper {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .absensi-img-wrapper:hover {
+            transform: translateY(-5px);
+        }
+
+        .absensi-img-wrapper img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .absensi-features {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: var(--light-bg);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .feature-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .feature-item h4 {
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .feature-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .absensi-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn-absensi {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(21, 78, 210, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-absensi:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(20, 76, 197, 0.6);
+        }
+
+        .btn-secondary {
+            background: var(--light-bg);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        /* === E-LEARNING === */
+        .elearning-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .elearning-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .elearning-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .elearning-img-wrapper {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .elearning-img-wrapper:hover {
+            transform: translateY(-5px);
+        }
+
+        .elearning-img-wrapper img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .elearning-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .elearning-feature {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .elearning-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .elearning-feature i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .demo-account-box {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 2px dashed #cbd5e1;
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .demo-account-title {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .account-role {
+            background: #dcfce7;
+            color: #166534;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .account-info {
+            background: white;
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 15px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .account-detail {
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .account-detail strong {
+            color: var(--primary);
+            min-width: 70px;
+            display: inline-block;
+        }
+
+        .btn-elearning {
+            background: var(--secondary);
+            color: white;
+            font-weight: 600;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-elearning:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.6);
+        }
+
+        /* === BELL SEKOLAH IOT === */
+        .bell-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .bell-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            width: 100%;
+        }
+
+        .bell-img-wrapper {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .bell-img-wrapper:hover {
+            transform: translateY(-5px);
+        }
+
+        .bell-img-wrapper img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .bell-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .bell-feature {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .bell-feature i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .btn-bell {
+            background: var(--accent);
+            color: white;
+            font-weight: 600;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-bell:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(230, 126, 34, 0.6);
+        }
+
+        /* === KONTAK === */
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .lokasi-sekolah {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .lokasi-label {
+            color: var(--secondary);
+            font-weight: 600;
+            margin: 0 0 8px;
+            font-size: 1.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #e1e8e8;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .btn-submit {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 16px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            width: 100%;
+            transition: 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .presensi-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-submit:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .kontak-info {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .kontak-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .kontak-info i {
+            color: var(--secondary);
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: #0e2c22;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 2rem;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* === REVEAL ANIMATION === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background: var(--primary);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 25px;
+                transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 1000;
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul li a {
+                font-size: 1.2rem;
+                padding: 15px;
+                display: block;
+                width: 100%;
+            }
+
+            .dropdown-content {
+                position: relative;
+                background: rgba(255, 255, 255, 0.1);
+                box-shadow: none;
+                width: 90%;
+                margin: 10px auto;
+            }
+
+            .dropdown-content a {
+                color: white;
+                padding: 15px;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .section {
+                padding: 70px 1rem;
+            }
+
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                padding: 40px 1rem;
+            }
+
+            .stat-item h4 {
+                font-size: 2rem;
+            }
+
+            .absensi-container,
+            .elearning-container,
+            .bell-container {
+                padding: 25px 20px;
+            }
+
+            .absensi-grid,
+            .elearning-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .absensi-images,
+            .elearning-images {
+                grid-template-columns: 1fr;
+            }
+
+            .bell-images {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .contact-container {
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .stats-bar {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-group a {
+                display: block;
+                margin: 10px auto;
+                width: 90%;
+                text-align: center;
+            }
+
+            .absensi-buttons,
+            .presensi-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn-absensi,
+            .btn-elearning,
+            .btn-bell {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header id="navbar">
+        <nav>
+            <a href="#home" class="logo-container">
+                <img src="assets/logo.png" alt="Logo SDN Kledung Temanggung" class="logo-img" />
+                <div class="logo-text">
+                    SDN KLEDUNG<br />TEMANGGUNG
+                </div>
+            </a>
+            <ul id="navMenu">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#statistik">Statistik</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Sistem Digital ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#absensi">Absensi Digital</a></li>
+                        <li><a href="#elearning">E-Learning</a></li>
+                        <li><a href="#bell-iot">Bell Otomatis</a></li>
+                    </ul>
+                </li>
+                <li><a href="#kontak" class="btn-nav">Kontak</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>SDN Kledung Temanggung<br />Mencerdaskan Generasi Bangsa</h1>
+            <p>Sekolah Dasar Negeri yang berkomitmen pada pendidikan berkualitas, pengembangan karakter, dan inovasi digital untuk menyiapkan generasi masa depan yang cerdas dan berakhlak mulia</p>
+            <div class="cta-group">
+                <a href="#profil">Selengkapnya</a>
+                <a href="#kontak">Informasi PPDB</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profil Sekolah -->
+    <section id="profil" class="section reveal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Profil Sekolah</h2>
+            </div>
+            <div class="profil-content">
+                <div class="profil-item">
+                    <h4>Sekolah Dasar Negeri Unggulan</h4>
+                    <p>SDN Kledung Temanggung adalah lembaga pendidikan dasar negeri yang berkomitmen untuk memberikan pendidikan berkualitas dengan mengintegrasikan ilmu pengetahuan dan pembentukan karakter. Kami hadir untuk membentuk generasi muda yang cerdas secara akademik dan berakhlak mulia.</p>
+                </div>
+                <div class="profil-item">
+                    <h4>Visi & Misi</h4>
+                    <p><strong>Visi:</strong> "Menjadi sekolah dasar unggulan yang menghasilkan generasi cerdas, berkarakter, dan berprestasi."</p>
+                    <p><strong>Misi:</strong> 
+                        1. Menyelenggarakan pendidikan dasar berkualitas.<br>
+                        2. Menanamkan nilai-nilai karakter bangsa.<br>
+                        3. Mengembangkan potensi peserta didik secara optimal.<br>
+                        4. Menerapkan teknologi dalam pembelajaran.</p>
+                </div>
+                <div class="profil-item">
+                    <h4>Fasilitas Pendidikan</h4>
+                    <p>Kami menyediakan fasilitas pendidikan yang memadai untuk mendukung proses pembelajaran, termasuk ruang kelas yang nyaman, laboratorium komputer, perpustakaan, lapangan olahraga, dan taman sekolah yang asri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Unggulan -->
+    <section id="program" class="section bg-light reveal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Program Unggulan</h2>
+            </div>
+            <div class="grid-3">
+                <div class="program-card">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80"
+                        alt="Pembelajaran Digital" class="program-img" />
+                    <div class="program-info">
+                        <h4>Pembelajaran Digital</h4>
+                        <p>Penerapan teknologi dalam proses pembelajaran untuk meningkatkan kualitas pendidikan</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80"
+                        alt="Penguatan Karakter" class="program-img" />
+                    <div class="program-info">
+                        <h4>Penguatan Karakter</h4>
+                        <p>Program pembentukan karakter siswa melalui kegiatan intra dan ekstrakurikuler</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80"
+                        alt="Literasi Digital" class="program-img" />
+                    <div class="program-info">
+                        <h4>Literasi Digital</h4>
+                        <p>Pengenalan dan pemanfaatan teknologi informasi sejak dini</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistik -->
+    <section id="statistik" class="section reveal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Statistik Sekolah</h2>
+            </div>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <h4>350+</h4>
+                    <p>Siswa Aktif</p>
+                </div>
+                <div class="stat-item">
+                    <h4>25+</h4>
+                    <p>Tenaga Pendidik</p>
+                </div>
+                <div class="stat-item">
+                    <h4>14:1</h4>
+                    <p>Rasio Siswa-Guru</p>
+                </div>
+                <div class="stat-item">
+                    <h4>100%</h4>
+                    <p>Kelulusan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABSENSI DIGITAL -->
+    <section id="absensi" class="section reveal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Absensi Digital</h2>
+                <p>Sistem presensi online terintegrasi untuk memantau kehadiran siswa secara real-time</p>
+            </div>
+            <div class="absensi-container">
+                <div class="absensi-grid">
+                    <!-- Video Promo -->
+                    <div>
+                        <h3 class="demo-account-title">
+                            <i class="fab fa-youtube"></i>
+                            Video Demo Absensi Digital
+                        </h3>
+                        <div class="instagram-embed-container">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Gallery & Fitur -->
+                    <div class="absensi-features">
+                        <h3 class="demo-account-title">
+                            <i class="fas fa-images"></i>
+                            Tampilan Aplikasi Absensi
+                        </h3>
+
+                        <div class="absensi-images">
+                            <div class="absensi-img-wrapper">
+                                <img src="assets/absen1.jpeg" alt="Tampilan Dashboard Absensi" />
+                            </div>
+                            <div class="absensi-img-wrapper">
+                                <img src="assets/absen2.jpeg" alt="Laporan Kehadiran Siswa" />
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Real-time Monitoring</h4>
+                                <p>Pantau kehadiran siswa secara langsung</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <i class="fas fa-bell"></i>
+                            <div>
+                                <h4>Notifikasi Orang Tua</h4>
+                                <p>Notifikasi langsung via WhatsApp</p>
+                            </div>
+                        </div>
+
+                        <div class="absensi-buttons">
+                            <a href="https://sekolahpintar.my/sdnkledung/presensi/" target="_blank"
+                                class="btn-absensi">
+                                <i class="fas fa-external-link-alt"></i>
+                                Buka Aplikasi Absensi
+                            </a>
+                            <a href="#kontak" class="btn-absensi btn-secondary">
+                                <i class="fas fa-info-circle"></i>
+                                Panduan Penggunaan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-LEARNING -->
+    <section id="elearning" class="section bg-light reveal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Platform E-Learning</h2>
+                <p>Sistem pembelajaran online terintegrasi untuk akses materi dan tugas kapan saja, di mana saja</p>
+            </div>
+            <div class="elearning-container">
+                <div class="elearning-grid">
+                    <!-- Gallery & Fitur -->
+                    <div>
+                        <div class="elearning-images">
+                            <div class="elearning-img-wrapper">
+                                <img src="assets/elearning1.jpeg" alt="Dashboard E-Learning" />
+                            </div>
+                            <div class="elearning-img-wrapper">
+                                <img src="assets/elearning2.jpeg" alt="Materi Pembelajaran Digital" />
+                            </div>
+                        </div>
+
+                        <div class="elearning-features">
+                            <div class="elearning-feature">
+                                <i class="fas fa-book"></i>
+                                <h4>Materi Digital</h4>
+                                <p>Akses materi pelajaran online</p>
+                            </div>
+                            <div class="elearning-feature">
+                                <i class="fas fa-tasks"></i>
+                                <h4>Tugas Online</h4>
+                                <p>Upload dan kumpulkan tugas</p>
+                            </div>
+                            <div class="elearning-feature">
+                                <i class="fas fa-comments"></i>
+                                <h4>Forum Diskusi</h4>
+                                <p>Diskusi dengan guru dan teman</p>
+                            </div>
+                            <div class="elearning-feature">
+                                <i class="fas fa-chart-line"></i>
+                                <h4>Progress Tracking</h4>
+                                <p>Pantau perkembangan belajar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Akun Demo -->
+                    <div>
+                        <div class="demo-account-box">
+                            <div class="demo-account-title">
+                                <i class="fas fa-user-graduate"></i>
+                                Akses Demo E-Learning
+                            </div>
+
+                            <!-- Guru Account -->
+                            <div class="account-info">
+                                <span class="account-role">Guru / Pengajar</span>
+                                <div class="account-detail">
+                                    <strong>Email:</strong> guru@sdnkledung.sch.id
+                                </div>
+                                <div class="account-detail">
+                                    <strong>Password:</strong> guru123
+                                </div>
+                            </div>
+
+                            <!-- Siswa Account -->
+                            <div class="account-info">
+                                <span class="account-role">Siswa</span>
+                                <div class="account-detail">
+                                    <strong>Email:</strong> siswa@sdnkledung.sch.id
+                                </div>
+                                <div class="account-detail">
+                                    <strong>Password:</strong> siswa123
+                                </div>
+                            </div>
+
+                            <p class="account-detail" style="font-size: 0.9rem; margin-top: 15px; color: #666;">
+                                <i class="fas fa-info-circle"></i>
+                                Gunakan akun demo di atas untuk login dan menjelajahi fitur-fitur platform E-Learning.
+                            </p>
+                            <div class="presensi-buttons">
+                                <a href="https://sekolahpintar.my/elearning/" target="_blank" class="btn-elearning">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Buka Platform E-Learning
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BELL SEKOLAH IOT -->
+    <section id="bell-iot" class="section reveal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Bell Sekolah Otomatis (IoT)</h2>
+                <p>Sistem bell berbasis IoT yang akurat dan dapat dikendalikan dari mana saja</p>
+            </div>
+            <div class="bell-container">
+                <div class="bell-images">
+                    <div class="bell-img-wrapper">
+                        <img src="assets/bel1.jpeg" alt="Antarmuka Pengaturan Jadwal Bell" />
+                    </div>
+                    <div class="bell-img-wrapper">
+                        <img src="assets/bel2.jpeg" alt="Fitur Jadwal Bell" />
+                    </div>
+                    <div class="bell-img-wrapper">
+                        <img src="assets/bel3.jpeg" alt="Perangkat IoT Bell Sekolah" />
+                    </div>
+                </div>
+
+                <div class="bell-features">
+                    <div class="bell-feature">
+                        <i class="fas fa-clock"></i>
+                        <h4>Jadwal Fleksibel</h4>
+                        <p>Atur jadwal bel sesuai kebutuhan pembelajaran</p>
+                    </div>
+                    <div class="bell-feature">
+                        <i class="fas fa-wifi"></i>
+                        <h4>Kontrol Online</h4>
+                        <p>Kendalikan dari smartphone atau komputer</p>
+                    </div>
+                    <div class="bell-feature">
+                        <i class="fas fa-bell"></i>
+                        <h4>Multiple Sound</h4>
+                        <p>Berbagai pilihan suara bel</p>
+                    </div>
+                </div>
+
+                <a href="https://sekolahpintar.my/bel" target="_blank" class="btn-bell">
+                    <i class="fas fa-play-circle"></i>
+                    Lihat Demo Bell IoT
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="section reveal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Kami</h2>
+            </div>
+            <div class="contact-container">
+                <div class="lokasi-sekolah">
+                    <p class="lokasi-label">Lokasi Sekolah</p>
+                    <p>Jl. Raya Kledung, Desa Kledung, Kecamatan Kledung, Kabupaten Temanggung, Jawa Tengah 56264</p>
+                </div>
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap</label>
+                        <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Masukkan alamat email" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telepon">Nomor Telepon</label>
+                        <input type="tel" id="telepon" name="telepon" required placeholder="Masukkan nomor telepon" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pesan">Pesan</label>
+                        <textarea id="pesan" name="pesan" rows="4" required
+                            placeholder="Tulis pesan Anda di sini..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Kirim Pesan</button>
+                </form>
+
+                <div class="kontak-info">
+                    <p><i class="fas fa-phone"></i> (0293) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@sdnkledung.sch.id</p>
+                    <p><i class="fas fa-clock"></i> Senin - Jumat: 07:00 - 16:00 WIB</p>
+                    <p><i class="fas fa-globe"></i> www.sdnkledung-tmg.sch.id</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 SDN Kledung Temanggung. Semua Hak Dilindungi.</p>
+        <p>Mencerdaskan Generasi Bangsa dengan Pendidikan Berkualitas dan Inovasi Digital</p>
+        <p style="margin-top: 20px; font-size: 0.9rem;">
+            <i class="fas fa-map-marker-alt"></i> 
+            Jl. Raya Kledung, Temanggung, Jawa Tengah 56264
+        </p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const header = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const spans = menuToggle.querySelectorAll('span');
+
+            // Hamburger to X animation
+            if (navMenu.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                // Reset hamburger icon
+                const spans = menuToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            });
+        });
+
+        // Reveal animation on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            reveals.forEach((el) => {
+                const top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                nama: document.getElementById('nama').value,
+                email: document.getElementById('email').value,
+                telepon: document.getElementById('telepon').value,
+                pesan: document.getElementById('pesan').value
+            };
+            
+            // In production, you would send this data to a server
+            console.log('Form data:', formData);
+            
+            // Show success message
+            alert('Terima kasih! Pesan Anda telah berhasil dikirim. Kami akan menghubungi Anda segera.');
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // System digital links
+        const systemLinks = {
+            absensi: "https://sekolahpintar.my/sdnkledung/presensi/",
+            elearning: "https://sekolahpintar.my/elearning/",
+            bell: "https://sekolahpintar.my/bel/"
+        };
+
+        // Log system access (optional)
+        document.querySelectorAll('[href*="sekolahpintar.my"]').forEach(link => {
+            link.addEventListener('click', function() {
+                console.log('Mengakses sistem:', this.href);
+            });
+        });
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', () => {
+            // Set current year in footer
+            const currentYear = new Date().getFullYear();
+            const yearElement = document.querySelector('footer p:first-child');
+            if (yearElement) {
+                yearElement.innerHTML = `&copy; ${currentYear} SDN Kledung Temanggung. Semua Hak Dilindungi.`;
+            }
+        });
+    </script>
+</body>
+
+</html>
