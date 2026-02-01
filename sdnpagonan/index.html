@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,6 +36,31 @@
             background-color: var(--cream-light);
         }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .bg-light {
+            background-color: var(--cream-warm);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* ========== HEADER & NAVIGASI ========== */
         header {
             background-color: var(--cream-light);
@@ -64,10 +90,12 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #f9f9f9;
+            background-color: var(--cream-light);
             min-width: 180px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1;
+            border-radius: 8px;
+            border: 1px solid var(--cream-warm);
         }
 
         /* Links inside dropdown */
@@ -76,15 +104,17 @@
         }
 
         .dropdown-content a {
-            color: black;
+            color: var(--dark-brown);
             padding: 12px 16px;
             text-decoration: none;
             display: block;
             text-align: left;
+            transition: background-color 0.3s;
         }
 
         .dropdown-content a:hover {
-            background-color: #f1f1f1;
+            background-color: var(--cream-warm);
+            color: var(--moss-green);
         }
 
         /* Show dropdown on hover */
@@ -180,7 +210,7 @@
             height: 100vh;
             /* Menggunakan img/profil.jpg sebagai background */
             background: linear-gradient(rgba(94, 64, 55, 0.7), rgba(62, 39, 35, 0.85)),
-                        url('img/profil.jpg');
+                url('img/profil.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -234,22 +264,20 @@
         }
 
         /* ========== SECTION UMUM ========== */
-        section {
-            padding: 6rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
         }
 
-        section h2 {
-            text-align: center;
+        .section-title h2 {
             color: var(--earth-brown);
-            margin-bottom: 4rem;
+            margin-bottom: 15px;
             font-size: 2.8rem;
             position: relative;
             font-weight: 700;
         }
 
-        section h2::after {
+        .section-title h2::after {
             content: '';
             position: absolute;
             width: 120px;
@@ -259,6 +287,14 @@
             left: 50%;
             transform: translateX(-50%);
             border-radius: 5px;
+        }
+
+        .section-title p {
+            color: var(--dark-brown);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 30px auto 0;
+            line-height: 1.6;
         }
 
         /* ========== PROFIL ========== */
@@ -326,10 +362,6 @@
         }
 
         /* ========== VISI MISI ========== */
-        #visi-misi {
-            background-color: var(--cream-warm);
-        }
-
         .visi-misi-container {
             display: flex;
             gap: 3rem;
@@ -399,31 +431,50 @@
             margin-right: 12px;
         }
 
-        /* === ABSENSI DIGITAL === */
+        /* ========== ABSENSI DIGITAL ========== */
         .absensi-container {
-            max-width: 1200px;
-            margin: 0 auto;
             background: white;
             padding: 40px;
-            border-radius: 24px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(94, 64, 55, 0.08);
+            border: 1px solid var(--cream-warm);
         }
 
         .absensi-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
+            align-items: start;
+        }
+
+        .absensi-features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .demo-account-title {
+            display: flex;
             align-items: center;
+            gap: 10px;
+            color: var(--earth-brown);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .demo-account-title i {
+            color: var(--accent-gold);
         }
 
         .instagram-embed-container {
             position: relative;
             width: 100%;
-            padding-bottom: 125%;
+            padding-bottom: 56.25%;
+            /* 16:9 Aspect Ratio */
             height: 0;
             overflow: hidden;
-            border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
         .instagram-embed-container iframe {
@@ -437,32 +488,26 @@
 
         .absensi-images {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr 1fr;
             gap: 15px;
+            margin-bottom: 20px;
         }
 
         .absensi-img-wrapper {
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .absensi-img-wrapper:hover {
-            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
 
         .absensi-img-wrapper img {
             width: 100%;
-            height: 200px;
+            height: 150px;
             object-fit: cover;
-            display: block;
+            transition: transform 0.3s ease;
         }
 
-        .absensi-features {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        .absensi-img-wrapper:hover img {
+            transform: scale(1.05);
         }
 
         .feature-item {
@@ -470,44 +515,98 @@
             align-items: center;
             gap: 15px;
             padding: 15px;
-            background: var(--light);
-            border-radius: 12px;
-            border-left: 4px solid var(--primary);
+            background: var(--cream-warm);
+            border-radius: 10px;
+            border-left: 4px solid var(--moss-green);
         }
 
         .feature-item i {
             font-size: 1.5rem;
-            color: var(--primary);
+            color: var(--moss-green);
+            min-width: 40px;
         }
 
         .feature-item h4 {
-            color: var(--dark);
+            color: var(--earth-brown);
             margin-bottom: 5px;
         }
 
         .feature-item p {
-            color: var(--gray);
-            font-size: 0.9rem;
+            color: var(--dark-brown);
+            font-size: 0.95rem;
+        }
+
+        /* Demo Account Styles */
+        .demo-account-simple {
+            background: var(--cream-warm);
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .demo-account-simple h4 {
+            color: var(--earth-brown);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        .demo-account-simple h4 i {
+            color: var(--moss-green);
+        }
+
+        .demo-credentials {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #dee2e6;
+        }
+
+        .demo-credentials div {
+            padding: 5px 0;
+            font-size: 0.95rem;
+        }
+
+        .demo-credentials strong {
+            color: var(--earth-brown);
+            display: inline-block;
+            width: 80px;
+        }
+
+        .demo-account-simple small {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666 !important;
+            font-size: 0.85rem;
+        }
+
+        .text-muted {
+            color: #718096 !important;
         }
 
         .absensi-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 20px;
+            justify-content: center;
         }
 
         .btn-absensi {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             background: var(--moss-green);
             color: white;
-            font-weight: 600;
-            padding: 15px 45px;
+            padding: 15px 30px;
             border-radius: 50px;
             text-decoration: none;
+            font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
             box-shadow: 0 5px 20px rgba(51, 105, 30, 0.3);
-            display: inline-block;
             border: 2px solid transparent;
         }
 
@@ -519,10 +618,309 @@
             box-shadow: 0 8px 25px rgba(51, 105, 30, 0.4);
         }
 
-        .btn-secondary {
-            background: var(--light);
-            color: var(--primary);
-            border: 2px solid var(--primary);
+        /* ========== E-LEARNING ========== */
+        .elearning-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(94, 64, 55, 0.08);
+            border: 1px solid var(--cream-warm);
+        }
+
+        .elearning-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .elearning-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .elearning-img-wrapper {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .elearning-img-wrapper img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .elearning-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .elearning-feature {
+            text-align: center;
+            padding: 20px;
+            background: var(--cream-warm);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .elearning-feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .elearning-feature i {
+            font-size: 2rem;
+            color: var(--moss-green);
+            margin-bottom: 15px;
+        }
+
+        .elearning-feature h4 {
+            color: var(--earth-brown);
+            margin-bottom: 10px;
+        }
+
+        .elearning-feature p {
+            color: var(--dark-brown);
+            font-size: 0.9rem;
+        }
+
+        /* Demo Account Box for E-Learning */
+        .demo-account-box {
+            background: linear-gradient(135deg, var(--cream-warm) 0%, #e8dcc5 100%);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(94, 64, 55, 0.1);
+            border: 1px solid var(--cream-warm);
+        }
+
+        .demo-account-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--earth-brown);
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+        }
+
+        .demo-account-title i {
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+        }
+
+        .account-info {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--moss-green);
+        }
+
+        .account-role {
+            display: inline-block;
+            background: var(--moss-green);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .account-detail {
+            margin-bottom: 10px;
+            color: var(--dark-brown);
+        }
+
+        .account-detail strong {
+            color: var(--earth-brown);
+            display: inline-block;
+            width: 70px;
+        }
+
+        .presensi-buttons {
+            margin-top: 25px;
+        }
+
+        .btn-elearning {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--moss-green);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(51, 105, 30, 0.3);
+            border: 2px solid transparent;
+        }
+
+        .btn-elearning:hover {
+            background: transparent;
+            color: var(--moss-green);
+            border-color: var(--moss-green);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(51, 105, 30, 0.4);
+        }
+
+        /* ========== BELL SEKOLAH IOT ========== */
+        .bell-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(94, 64, 55, 0.08);
+            border: 1px solid var(--cream-warm);
+            text-align: center;
+        }
+
+        .bell-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .bell-img-wrapper {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .bell-img-wrapper:hover {
+            transform: translateY(-5px);
+        }
+
+        .bell-img-wrapper img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Bell Features Grid - 4 Kolom */
+        .bell-features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .bell-feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--cream-warm);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bell-feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .bell-feature-card.demo-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 1px dashed #adb5bd;
+        }
+
+        .bell-feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--earth-brown) 0%, var(--accent-gold) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .bell-feature-card.demo-card .bell-feature-icon {
+            background: linear-gradient(135deg, #495057 0%, #6c757d 100%);
+        }
+
+        .bell-feature-card h4 {
+            margin-bottom: 10px;
+            color: var(--earth-brown);
+            font-size: 1.1rem;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bell-feature-card p {
+            color: #718096;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .bell-feature-card .demo-credentials {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border: 1px solid #e2e8f0;
+            width: 100%;
+        }
+
+        .bell-feature-card .demo-credentials div {
+            padding: 3px 0;
+            text-align: left;
+            font-size: 0.85rem;
+        }
+
+        .bell-feature-card .demo-credentials strong {
+            color: #4a5568;
+            display: inline-block;
+            width: 70px;
+        }
+
+        .bell-feature-card .text-muted {
+            color: #718096 !important;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        /* Tombol Bell */
+        .btn-bell {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--earth-brown) 0%, var(--accent-gold) 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(93, 64, 55, 0.3);
+            margin-top: 30px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-bell:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(93, 64, 55, 0.4);
+            color: white;
+            opacity: 0.9;
         }
 
         /* ========== FASILITAS / GALERI ========== */
@@ -561,229 +959,6 @@
             transform: scale(1.1);
         }
 
-        .gallery-item.video-placeholder::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(62, 39, 35, 0.4);
-            z-index: 1;
-        }
-
-        .gallery-item .play-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 4rem;
-            z-index: 2;
-            opacity: 0.9;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        /* === E-LEARNING === */
-        .elearning-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 24px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .elearning-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        .elearning-images {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .elearning-img-wrapper {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .elearning-img-wrapper:hover {
-            transform: translateY(-5px);
-        }
-
-        .elearning-img-wrapper img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .elearning-features {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .elearning-feature {
-            background: var(--light);
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .elearning-feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .elearning-feature i {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .demo-account-box {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            border: 2px dashed #cbd5e1;
-            border-radius: 16px;
-            padding: 25px;
-            margin-top: 30px;
-        }
-
-        .demo-account-title {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .account-role {
-            background: #dcfce7;
-            color: #166534;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        .account-info {
-            background: white;
-            border-radius: 12px;
-            padding: 18px;
-            margin-bottom: 15px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .account-detail {
-            margin-bottom: 8px;
-            font-size: 1rem;
-        }
-
-        .account-detail strong {
-            color: var(--primary);
-            min-width: 70px;
-            display: inline-block;
-        }
-
-        .btn-elearning {
-            background: var(--moss-green);
-            color: white;
-            font-weight: 600;
-            padding: 15px 45px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(51, 105, 30, 0.3);
-            display: inline-block;
-            border: 2px solid transparent;
-        }
-
-        .btn-elearning:hover {
-            background: transparent;
-            color: var(--moss-green);
-            border-color: var(--moss-green);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(51, 105, 30, 0.4);
-        }
-
-        /* === BELL SEKOLAH IOT === */
-        .bell-container {
-            max-width: 950px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 18px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .bell-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-            width: 100%;
-            max-width: 700px;
-        }
-
-        .bell-img-wrapper {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .bell-img-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .bell-desc {
-            text-align: center;
-            font-size: 1.05rem;
-            color: var(--text-dark);
-            max-width: 600px;
-            margin: 0;
-        }
-
-        .btn-bell {
-            background: var(--moss-green);
-            color: white;
-            font-weight: 600;
-            padding: 15px 45px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(51, 105, 30, 0.3);
-            display: inline-block;
-            border: 2px solid transparent;
-        }
-
-        .btn-bell:hover {
-            background: transparent;
-            color: var(--moss-green);
-            border-color: var(--moss-green);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(51, 105, 30, 0.4);
-        }
-
         /* ========== KONTAK ========== */
         .kontak-container {
             display: flex;
@@ -791,7 +966,8 @@
             flex-wrap: wrap;
         }
 
-        .kontak-info, .kontak-form {
+        .kontak-info,
+        .kontak-form {
             flex: 1;
             min-width: 320px;
             background: white;
@@ -801,7 +977,8 @@
             border: 1px solid var(--cream-warm);
         }
 
-        .kontak-info h3, .kontak-form h3 {
+        .kontak-info h3,
+        .kontak-form h3 {
             color: var(--earth-brown);
             margin-bottom: 2.2rem;
             font-size: 2rem;
@@ -895,9 +1072,35 @@
         }
 
         /* ========== RESPONSIVE ========== */
+        @media (max-width: 1200px) {
+            .bell-features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .absensi-grid,
+            .elearning-grid {
+                gap: 30px;
+            }
+        }
+
         @media (max-width: 992px) {
-            .hero-content h1 { font-size: 3.2rem; }
-            section h2 { font-size: 2.5rem; }
+            .hero-content h1 {
+                font-size: 3.2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+
+            .absensi-grid,
+            .elearning-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bell-images {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
@@ -909,7 +1112,7 @@
                 left: 0;
                 width: 100%;
                 background-color: var(--cream-light);
-                box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
                 padding: 1.5rem 0;
                 text-align: center;
             }
@@ -927,40 +1130,121 @@
                 display: block;
             }
 
-            .hero-content h1 { font-size: 2.7rem; }
-            .hero-content .subtitle { font-size: 1.3rem; }
-            section { padding: 4rem 5%; }
+            .hero-content h1 {
+                font-size: 2.7rem;
+            }
 
-            .profil-content, .kontak-info, .kontak-form {
+            .hero-content .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .absensi-container,
+            .elearning-container,
+            .bell-container {
+                padding: 25px;
+            }
+
+            .profil-content,
+            .kontak-info,
+            .kontak-form {
                 padding: 2rem;
             }
 
-            .card { padding: 2.2rem; }
-            .absensi-container { padding: 25px; }
-            
+            .card {
+                padding: 2.2rem;
+            }
+
             /* Logo lebih kecil di mobile */
             .logo-img {
                 height: 40px;
                 width: 40px;
             }
+
             .logo-text .sekolah {
                 font-size: 1.5rem;
+            }
+
+            .bell-features-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .bell-images {
+                grid-template-columns: 1fr;
+            }
+
+            .elearning-features {
+                grid-template-columns: 1fr;
+            }
+
+            .absensi-images {
+                grid-template-columns: 1fr;
+            }
+
+            .bell-feature-card {
+                padding: 20px 15px;
+            }
+
+            .bell-feature-card h4 {
+                min-height: auto;
+                margin-bottom: 15px;
             }
         }
 
         @media (max-width: 576px) {
-            .hero { margin-top: 70px; }
-            .hero-content h1 { font-size: 2.2rem; }
-            .logo-text .sekolah { font-size: 1.3rem; }
-            .btn, .btn-absensi { padding: 0.9rem 2rem; font-size: 1rem; }
+            .hero {
+                margin-top: 70px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .logo-text .sekolah {
+                font-size: 1.3rem;
+            }
+
+            .btn,
+            .btn-absensi,
+            .btn-elearning,
+            .btn-bell {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+
             .logo-img {
                 height: 35px;
                 width: 35px;
                 margin-right: 8px;
             }
-            .absensi-gallery {
-                grid-template-columns: 1fr;
+
+            .section-title h2 {
+                font-size: 2rem;
             }
+
+            .section-title p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Tambahkan ke bagian CSS Absensi Digital */
+        .instagram-embed-container {
+            margin-bottom: 40px;
+            /* Menambah jarak bawah video */
+        }
+
+        .feature-item {
+            margin-bottom: 20px;
+            /* Jarak antar fitur */
+        }
+
+        .feature-item:first-of-type {
+            margin-top: 0;
+            /* Reset jika ada margin top sebelumnya */
         }
     </style>
 </head>
@@ -988,9 +1272,9 @@
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn">Digitalisasi ▼</a>
                     <ul class="dropdown-content">
-                    <li><a href="#absensi">Absensi Digital</a></li>
-                    <li><a href="#elearning">E-Learning</a></li>
-                    <li><a href="#bell-iot">Bell Otomatis</a></li>
+                        <li><a href="#absensi">Absensi Digital</a></li>
+                        <li><a href="#elearning">E-Learning</a></li>
+                        <li><a href="#bell-iot">Bell Otomatis</a></li>
                     </ul>
                 </li>
                 <li><a href="#kontak" class="nav-link">Kontak</a></li>
@@ -1002,118 +1286,133 @@
     <section id="beranda" class="hero">
         <div class="hero-content">
             <h1>SD NEGERI PAGONAN</h1>
-            <p class="subtitle">Menumbuhkan Generasi Cerdas, Berkarakter, dan Berwawasan Lingkungan di Kecamatan Grabag</p>
+            <p class="subtitle">Menumbuhkan Generasi Cerdas, Berkarakter, dan Berwawasan Lingkungan di Kecamatan Grabag
+            </p>
             <a href="#profil" class="btn">Jelajahi Sekolah Kami</a>
         </div>
     </section>
 
     <!-- Profil Sekolah -->
-    <section id="profil">
-        <h2>Profil Sekolah</h2>
-        <div class="profil-content">
-            <div class="profil-text">
-                <h3>Sekolah Ramah dengan Warna Alam</h3>
-                <p>Dengan penuh hormat, kami persembahkan <strong>SD Negeri Pagonan</strong>, sebuah institusi pendidikan dasar yang telah menjadi pilar pencerahan di tengah masyarakat Sidogede, Grabag, sejak dideklarasikan secara resmi pada <strong>31 Agustus 1985</strong></p>
-                <p>Di bawah bimbingan kepemimpinan visioner <strong>Ibu Harti</strong> dan didukung oleh tenaga pendidik yang kompeten serta berdedikasi tinggi, kami mengemban amanah untuk membina sekitar <strong>99 peserta didik</strong> dalam mengoptimalkan potensi intelektual sekaligus membentuk karakter yang berintegritas.</p>
-                <div class="highlight-box">
-                    <p><strong>NPSN:</strong> 20308003 | <strong>Status:</strong> Negeri<br>
-                    <strong>Akreditasi:</strong> B (Baik)<br>
-                </div>
+    <section id="profil" class="section reveal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Profil Sekolah</h2>
+                <p>SD Negeri Pagonan - Sekolah Dasar Negeri yang berkomitmen memberikan pendidikan terbaik bagi generasi
+                    penerus</p>
             </div>
-            <div class="profil-img">
-                <!-- Menggunakan foto guru.jpg dari folder img -->
-                <img src="img/guru.jpg" alt="Guru dan Siswa SD Negeri Pagonan">
+            <div class="profil-content">
+                <div class="profil-text">
+                    <h3>Sekolah Ramah dengan Warna Alam</h3>
+                    <p>Dengan penuh hormat, kami persembahkan <strong>SD Negeri Pagonan</strong>, sebuah institusi
+                        pendidikan dasar yang telah menjadi pilar pencerahan di tengah masyarakat Sidogede, Grabag,
+                        sejak dideklarasikan secara resmi pada <strong>31 Agustus 1985</strong></p>
+                    <p>Di bawah bimbingan kepemimpinan visioner <strong>Ibu Harti</strong> dan didukung oleh tenaga
+                        pendidik yang kompeten serta berdedikasi tinggi, kami mengemban amanah untuk membina sekitar
+                        <strong>99 peserta didik</strong> dalam mengoptimalkan potensi intelektual sekaligus membentuk
+                        karakter yang berintegritas.
+                    </p>
+                    <div class="highlight-box">
+                        <p><strong>NPSN:</strong> 20308003 | <strong>Status:</strong> Negeri<br>
+                            <strong>Akreditasi:</strong> B (Baik)<br>
+                    </div>
+                </div>
+                <div class="profil-img">
+                    <!-- Menggunakan foto guru.jpg dari folder img -->
+                    <img src="img/guru.jpg" alt="Guru dan Siswa SD Negeri Pagonan">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Visi & Misi -->
-    <section id="visi-misi">
-        <h2>Visi & Misi</h2>
-        <div class="visi-misi-container">
-            <div class="card visi">
-                <h3><i class="fas fa-eye"></i> Visi</h3>
-                <p>Mewujudkan peserta didik yang beriman, berakhlak mulia, cerdas, kreatif, peduli lingkungan, dan mampu berkontribusi bagi masyarakat, dilandasi semangat kekeluargaan yang hangat.</p>
+    <section id="visi-misi" class="section bg-light reveal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Visi & Misi</h2>
+                <p>Pedoman dan arahan dalam menjalankan proses pendidikan di SD Negeri Pagonan</p>
             </div>
-            <div class="card misi">
-                <h3><i class="fas fa-bullseye"></i> Misi</h3>
-                <ul>
-                    <li>Menyelenggarakan pembelajaran aktif dengan pendekatan yang menyenangkan dan berpusat pada siswa.</li>
-                    <li>Menanamkan nilai-nilai karakter, keimanan, dan cinta tanah air melalui pembiasaan dan keteladanan.</li>
-                    <li>Mengoptimalkan seluruh potensi dan bakat siswa baik di bidang akademik maupun non-akademik.</li>
-                    <li>Menjalin kemitraan yang erat dan harmonis dengan orang tua wali dan masyarakat sekitar.</li>
-                    <li>Menjaga dan mengembangkan lingkungan sekolah yang asri, hijau, bersih, sehat, dan nyaman.</li>
-                </ul>
+            <div class="visi-misi-container">
+                <div class="card visi">
+                    <h3><i class="fas fa-eye"></i> Visi</h3>
+                    <p>Mewujudkan peserta didik yang beriman, berakhlak mulia, cerdas, kreatif, peduli lingkungan, dan
+                        mampu berkontribusi bagi masyarakat, dilandasi semangat kekeluargaan yang hangat.</p>
+                </div>
+                <div class="card misi">
+                    <h3><i class="fas fa-bullseye"></i> Misi</h3>
+                    <ul>
+                        <li>Menyelenggarakan pembelajaran aktif dengan pendekatan yang menyenangkan dan berpusat pada
+                            siswa.</li>
+                        <li>Menanamkan nilai-nilai karakter, keimanan, dan cinta tanah air melalui pembiasaan dan
+                            keteladanan.</li>
+                        <li>Mengoptimalkan seluruh potensi dan bakat siswa baik di bidang akademik maupun non-akademik.
+                        </li>
+                        <li>Menjalin kemitraan yang erat dan harmonis dengan orang tua wali dan masyarakat sekitar.</li>
+                        <li>Menjaga dan mengembangkan lingkungan sekolah yang asri, hijau, bersih, sehat, dan nyaman.
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Fasilitas & Kegiatan -->
-    <section id="fasilitas">
-        <h2>Kegiatan & Fasilitas</h2>
-        <p class="gallery-intro">Berbagai kegiatan dan fasilitas yang mendukung pengembangan potensi siswa di SD Negeri Pagonan.</p>
-        <div class="gallery">
-            <!-- Menggunakan 6 foto dari folder img -->
-            <div class="gallery-item">
-                <img src="img/festival.jpg" alt="Festival Sekolah">
+    <section id="fasilitas" class="section reveal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kegiatan & Fasilitas</h2>
+                <p>Berbagai kegiatan dan fasilitas yang mendukung pengembangan potensi siswa di SD Negeri Pagonan.</p>
             </div>
-            <div class="gallery-item">
-                <img src="img/guru.jpg" alt="Kegiatan Belajar Mengajar">
-            </div>
-            <div class="gallery-item">
-                <img src="img/lomba.jpg" alt="Lomba-lomba Siswa">
-            </div>
-            <div class="gallery-item">
-                <img src="img/lulus.jpg" alt="Wisuda dan Kelulusan">
-            </div>
-            <div class="gallery-item">
-                <img src="img/pelajaran.jpg" alt="Proses Pembelajaran">
-            </div>
-            <div class="gallery-item">
-                <img src="img/upacara.jpg" alt="Upacara Bendera">
+            <p class="gallery-intro">SD Negeri Pagonan dilengkapi dengan berbagai fasilitas yang mendukung kegiatan
+                belajar mengajar dan pengembangan bakat siswa.</p>
+            <div class="gallery">
+                <!-- Menggunakan 6 foto dari folder img -->
+                <div class="gallery-item">
+                    <img src="img/festival.jpg" alt="Festival Sekolah">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/guru.jpg" alt="Kegiatan Belajar Mengajar">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/lomba.jpg" alt="Lomba-lomba Siswa">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/lulus.jpg" alt="Wisuda dan Kelulusan">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/pelajaran.jpg" alt="Proses Pembelajaran">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/upacara.jpg" alt="Upacara Bendera">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ABSENSI DIGITAL PREVIEW -->
-    <section id="absensi" class="reveal">
+    <!-- ABSENSI DIGITAL -->
+    <section id="absensi" class="section reveal">
         <div class="container">
             <div class="section-title">
-                <h2>Absensi Digital Sekolah</h2>
+                <h2>Absensi Digital</h2>
+                <p>Sistem presensi online terintegrasi untuk memantau kehadiran siswa secara real-time</p>
             </div>
             <div class="absensi-container">
                 <div class="absensi-grid">
-                    <!-- Video Promo Instagram -->
+                    <!-- Video Promo -->
                     <div>
                         <h3 class="demo-account-title">
-                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-youtube"></i>
                             Video Demo Absensi Digital
                         </h3>
+
                         <div class="instagram-embed-container">
-                            <blockquote class="instagram-media"
-                            data-instgrm-permalink="https://www.instagram.com/reel/DUDQi1JD16c/"
-                            data-instgrm-version="14"
-                            style="max-width:540px; margin:auto;">
-                            </blockquote>
+                            <iframe src="https://drive.google.com/file/d/1VKsXNTbwuXER6rPFsSoDlGl4jK0vHlPg/preview"
+                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                            </iframe>
                         </div>
-                    </div>
-                    
-                    <!-- Gallery Absensi -->
-                    <div class="absensi-features">
-                        <h3 class="demo-account-title">
-                            <i class="fas fa-images"></i>
-                            Tampilan Aplikasi Absensi
-                        </h3>
-                        
-                        <div class="absensi-images">
-                            <div class="absensi-img-wrapper">
-                                <img src="img/absen1.jpeg" alt="Tampilan Absensi Siswa - Halaman Login" />
-                            </div>
-                            <div class="absensi-img-wrapper">
-                                <img src="img/absen2.jpeg" alt="Tampilan Absensi Siswa - Daftar Kehadiran" />
-                            </div>
-                        </div>
-                        
+
+                        <!-- Spacer besar antara video dan fitur -->
+                        <div style="height: 40px;"></div>
+
                         <div class="feature-item">
                             <i class="fas fa-clock"></i>
                             <div>
@@ -1121,24 +1420,50 @@
                                 <p>Pantau kehadiran siswa secara langsung</p>
                             </div>
                         </div>
-                        
+
                         <div class="feature-item">
                             <i class="fas fa-bell"></i>
                             <div>
-                                <h4>Notifikasi Orang Tua</h4>
-                                <p>Notifikasi langsung via WhatsApp/Email</p>
+                                <h4>Presensi Lebih Mudah</h4>
+                                <p>Presensi siswa secara otomatis dan cepat</p>
                             </div>
                         </div>
-                        
+                    </div>
+
+                    <!-- Gallery & Fitur -->
+                    <div class="absensi-features">
+                        <h3 class="demo-account-title">
+                            <i class="fas fa-images"></i>
+                            Tampilan Aplikasi Absensi
+                        </h3>
+
+                        <div class="absensi-images">
+                            <div class="absensi-img-wrapper">
+                                <img src="img/absen1.jpeg" alt="Tampilan Dashboard Absensi" />
+                            </div>
+                            <div class="absensi-img-wrapper">
+                                <img src="img/absen2.jpeg" alt="Laporan Kehadiran Siswa" />
+                            </div>
+                        </div>
+
+
+                        <!-- Akun Demo Versi Sederhana -->
+                        <div class="demo-account-simple">
+                            <h4><i class="fas fa-key"></i> Akun Demo Testing</h4>
+                            <div class="demo-credentials">
+                                <div><strong>Username:</strong> admin</div>
+                                <div><strong>Password:</strong> admin</div>
+                            </div>
+                            <small class="text-muted">
+                                <i class="fas fa-info-circle"></i>
+                                Gunakan akun ini untuk mencoba fitur admin
+                            </small>
+                        </div>
+
                         <div class="absensi-buttons">
-                            <a href="https://sekolahpintar.my/mimaarifgrabag1/presensi/" target="_blank" 
-                               class="btn-absensi">
+                            <a href="https://sekolahpintar.my/sdnkledung/presensi/" target="_blank" class="btn-absensi">
                                 <i class="fas fa-external-link-alt"></i>
                                 Buka Aplikasi Absensi
-                            </a>
-                            <a href="#contact" class="btn-absensi btn-secondary">
-                                <i class="fas fa-info-circle"></i>
-                                Info Lebih Lanjut
                             </a>
                         </div>
                     </div>
@@ -1147,25 +1472,26 @@
         </div>
     </section>
 
-    <!-- E-LEARNING PREVIEW -->
-    <section id="elearning" class="reveal">
+    <!-- E-LEARNING -->
+    <section id="elearning" class="section bg-light reveal">
         <div class="container">
             <div class="section-title">
-                <h2>E-Learning Sekolah</h2>
+                <h2>Platform E-Learning</h2>
+                <p>Sistem pembelajaran online terintegrasi untuk akses materi dan tugas kapan saja, di mana saja</p>
             </div>
             <div class="elearning-container">
                 <div class="elearning-grid">
-                    <!-- Gallery E-Learning dan Fitur -->
+                    <!-- Gallery & Fitur -->
                     <div>
                         <div class="elearning-images">
                             <div class="elearning-img-wrapper">
-                                <img src="img/elearning1.jpeg" alt="Tampilan Dashboard E-Learning Siswa" />
+                                <img src="img/elearning1.jpeg" alt="Dashboard E-Learning" />
                             </div>
                             <div class="elearning-img-wrapper">
-                                <img src="img/elearning2.jpeg" alt="Materi Pelajaran Interaktif" />
+                                <img src="img/elearning2.jpeg" alt="Materi Pembelajaran Digital" />
                             </div>
                         </div>
-                        
+
                         <div class="elearning-features">
                             <div class="elearning-feature">
                                 <i class="fas fa-book"></i>
@@ -1188,46 +1514,44 @@
                                 <p>Pantau perkembangan belajar</p>
                             </div>
                         </div>
-                        
                     </div>
-                    
+
                     <!-- Akun Demo -->
                     <div>
                         <div class="demo-account-box">
                             <div class="demo-account-title">
                                 <i class="fas fa-user-graduate"></i>
-                                Akun Demo untuk Mencoba
+                                Akses Demo E-Learning
                             </div>
-                            
+
                             <!-- Guru Account -->
                             <div class="account-info">
                                 <span class="account-role">Guru / Pengajar</span>
                                 <div class="account-detail">
-                                    <strong>Email:</strong> guru@sekolahpintar.my
+                                    <strong>Email:</strong> guru@sdnkledung.sch.id
                                 </div>
                                 <div class="account-detail">
-                                    <strong>Password:</strong> guru
+                                    <strong>Password:</strong> guru123
                                 </div>
                             </div>
-                            
+
                             <!-- Siswa Account -->
                             <div class="account-info">
                                 <span class="account-role">Siswa</span>
                                 <div class="account-detail">
-                                    <strong>Email:</strong> siswa@sekolahpintar.my
+                                    <strong>Email:</strong> siswa@sdnkledung.sch.id
                                 </div>
                                 <div class="account-detail">
-                                    <strong>Password:</strong> siswa
+                                    <strong>Password:</strong> siswa123
                                 </div>
                             </div>
-                            
-                            <p class="account-detail" style="font-size: 0.9rem; margin-top: 15px; color: var(--gray);">
+
+                            <p class="account-detail" style="font-size: 0.9rem; margin-top: 15px; color: #666;">
                                 <i class="fas fa-info-circle"></i>
                                 Gunakan akun demo di atas untuk login dan menjelajahi fitur-fitur platform E-Learning.
                             </p>
-                            <div class="absensi-buttons">
-                                <a href="https://sekolahpintar.my/elearning/" target="_blank" 
-                                   class="btn-elearning">
+                            <div class="presensi-buttons">
+                                <a href="https://sekolahpintar.my/elearning/" target="_blank" class="btn-elearning">
                                     <i class="fas fa-external-link-alt"></i>
                                     Buka Platform E-Learning
                                 </a>
@@ -1239,14 +1563,15 @@
         </div>
     </section>
 
-    <!-- BELL SEKOLAH IOT PREVIEW -->
-    <section id="bell-iot" class="section bg-light reveal">
+    <!-- BELL SEKOLAH IOT -->
+    <section id="bell-iot" class="section reveal">
         <div class="container">
             <div class="section-title">
                 <h2>Bell Sekolah Otomatis (IoT)</h2>
+                <p>Sistem bell berbasis IoT yang akurat dan dapat dikendalikan dari mana saja</p>
             </div>
             <div class="bell-container">
-                <div class="bell-gallery">
+                <div class="bell-images">
                     <div class="bell-img-wrapper">
                         <img src="img/bel1.jpeg" alt="Antarmuka Pengaturan Jadwal Bell" />
                     </div>
@@ -1257,70 +1582,118 @@
                         <img src="img/bel3.jpeg" alt="Perangkat IoT Bell Sekolah" />
                     </div>
                 </div>
-                <p class="bell-desc">
-                    Sistem bell otomatis berbasis IoT yang akurat, fleksibel, dan dapat dikendalikan dari mana saja untuk menunjang kegiatan belajar mengajar yang lebih teratur.
-                </p>
-                <a href="https://sekolahpintar.my/bel" target="_blank" rel="noopener" class="btn-bell">
+
+                <!-- Fitur-fitur dalam grid 4 kolom -->
+                <div class="bell-features-grid">
+                    <div class="bell-feature-card">
+                        <div class="bell-feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>Jadwal Fleksibel</h4>
+                        <p>Atur jadwal bel sesuai kebutuhan pembelajaran</p>
+                    </div>
+
+                    <div class="bell-feature-card">
+                        <div class="bell-feature-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h4>Kontrol Online</h4>
+                        <p>Kendalikan dari smartphone atau komputer</p>
+                    </div>
+
+                    <div class="bell-feature-card">
+                        <div class="bell-feature-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h4>Multiple Sound</h4>
+                        <p>Berbagai pilihan suara bel</p>
+                    </div>
+
+                    <div class="bell-feature-card demo-card">
+                        <div class="bell-feature-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <h4>Akun Demo Testing</h4>
+                        <div class="demo-credentials">
+                            <div><strong>Username:</strong> admin</div>
+                            <div><strong>Password:</strong> admin</div>
+                        </div>
+                        <small class="text-muted">
+                            <i class="fas fa-info-circle"></i>
+                            Gunakan untuk mencoba fitur admin
+                        </small>
+                    </div>
+                </div>
+
+                <a href="https://sekolahpintar.my/bel" target="_blank" class="btn-bell">
+                    <i class="fas fa-play-circle"></i>
                     Lihat Demo Bell IoT
                 </a>
             </div>
         </div>
-    </section> 
+    </section>
 
     <!-- Kontak & Lokasi -->
-    <section id="kontak">
-        <h2>Kontak & Lokasi</h2>
-        <div class="kontak-container">
-            <div class="kontak-info">
-                <h3>Kunjungi Kami</h3>
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <h4>Alamat Lengkap</h4>
-                        <p>Jl. Kyai Rahmat Pagonan, Sidogede, Kec. Grabag, Kab. Magelang, Jawa Tengah 56196</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email & Informasi</h4>
-                        <p>18sdnpagonan@gmail.com<br>
-                        Operator: Ibu Rahmawati Solikhah</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-user-tie"></i>
-                    <div>
-                        <h4>Kepala Sekolah</h4>
-                        <p>Ibu Harti</p>
-                    </div>
-                </div>
-                <h4 style="margin-top: 2.5rem; margin-bottom: 1rem;">Peta Lokasi</h4>
-                <div class="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.511307101456!2d110.319634!3d-7.348469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMjAnNTQuNSJTIDExMMKwMTknMTguNyJF!5e0!3m2!1sid!2sid!4v1621234567890!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
+    <section id="kontak" class="section bg-light reveal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kontak & Lokasi</h2>
+                <p>Hubungi kami untuk informasi lebih lanjut atau kunjungi langsung sekolah kami</p>
             </div>
-            <div class="kontak-form">
-                <h3>Kirim Pesan</h3>
-                <form id="pesanForm">
-                    <div class="form-group">
-                        <label for="nama">Nama Lengkap</label>
-                        <input type="text" id="nama" class="form-control" required>
+            <div class="kontak-container">
+                <div class="kontak-info">
+                    <h3>Kunjungi Kami</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Alamat Lengkap</h4>
+                            <p>Jl. Kyai Rahmat Pagonan, Sidogede, Kec. Grabag, Kab. Magelang, Jawa Tengah 56196</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Alamat Email</label>
-                        <input type="email" id="email" class="form-control" required>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email & Informasi</h4>
+                            <p>18sdnpagonan@gmail.com<br>
+                                Operator: Ibu Rahmawati Solikhah</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="subjek">Subjek</label>
-                        <input type="text" id="subjek" class="form-control" required>
+                    <div class="info-item">
+                        <i class="fas fa-user-tie"></i>
+                        <div>
+                            <h4>Kepala Sekolah</h4>
+                            <p>Ibu Harti</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="pesan">Pesan Anda</label>
-                        <textarea id="pesan" class="form-control" required></textarea>
+                    <h4 style="margin-top: 2.5rem; margin-bottom: 1rem;">Peta Lokasi</h4>
+                    <div class="map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.511307101456!2d110.319634!3d-7.348469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMjAnNTQuNSJTIDExMMKwMTknMTguNyJF!5e0!3m2!1sid!2sid!4v1621234567890!5m2!1sid!2sid"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
-                    <button type="submit" class="btn" style="width: 100%; padding: 1.2rem;">Kirim Pesan</button>
-                </form>
+                </div>
+                <div class="kontak-form">
+                    <h3>Kirim Pesan</h3>
+                    <form id="pesanForm">
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap</label>
+                            <input type="text" id="nama" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Alamat Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subjek">Subjek</label>
+                            <input type="text" id="subjek" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pesan">Pesan Anda</label>
+                            <textarea id="pesan" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%; padding: 1.2rem;">Kirim Pesan</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -1398,7 +1771,46 @@
             alert('Terima kasih atas pesannya! (Fitur ini dalam mode demo. Pada website asli, pesan akan dikirim ke email sekolah.)');
             this.reset();
         });
+
+        // Scroll Reveal Animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const revealTop = reveals[i].getBoundingClientRect().top;
+                const revealPoint = 100;
+
+                if (revealTop < windowHeight - revealPoint) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Dropdown functionality for mobile
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            const dropbtn = dropdown.querySelector('.dropbtn');
+            const dropdownContent = dropdown.querySelector('.dropdown-content');
+
+            dropbtn.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+
+            // Close dropdown when clicking elsewhere
+            document.addEventListener('click', (e) => {
+                if (!dropdown.contains(e.target) && window.innerWidth <= 768) {
+                    dropdownContent.style.display = 'none';
+                }
+            });
+        });
     </script>
-    <script async src="//www.instagram.com/embed.js"></script>
 </body>
+
 </html>
