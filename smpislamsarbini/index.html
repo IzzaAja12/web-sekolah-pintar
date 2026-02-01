@@ -381,20 +381,22 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
-            align-items: center;
+            align-items: start;
         }
 
-        .instagram-embed-container {
+        /* Updated for Google Drive Video */
+        .gdrive-video-container {
             position: relative;
             width: 100%;
-            padding-bottom: 125%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             height: 0;
             overflow: hidden;
             border-radius: 16px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            margin-bottom: 30px;
         }
 
-        .instagram-embed-container iframe {
+        .gdrive-video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -403,10 +405,74 @@
             border: none;
         }
 
+        /* Demo Account Box for Absensi */
+        .demo-account-box-absensi {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid var(--secondary);
+        }
+
+        .demo-account-title {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .demo-account-title i {
+            color: var(--secondary);
+        }
+
+        .account-info {
+            background: white;
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 15px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .account-role {
+            background: #dcfce7;
+            color: #166534;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .account-detail {
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .account-detail strong {
+            color: var(--primary);
+            min-width: 80px;
+            display: inline-block;
+        }
+
+        .account-note {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
         .absensi-images {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
+            margin-bottom: 25px;
         }
 
         .absensi-img-wrapper {
@@ -438,7 +504,7 @@
             align-items: center;
             gap: 15px;
             padding: 15px;
-            background: var(--light);
+            background: var(--light-bg);
             border-radius: 12px;
             border-left: 4px solid var(--primary);
         }
@@ -446,16 +512,19 @@
         .feature-item i {
             font-size: 1.5rem;
             color: var(--primary);
+            min-width: 40px;
         }
 
         .feature-item h4 {
-            color: var(--dark);
+            color: var(--primary);
             margin-bottom: 5px;
+            font-size: 1.1rem;
         }
 
         .feature-item p {
-            color: var(--gray);
+            color: var(--text-dark);
             font-size: 0.9rem;
+            opacity: 0.8;
         }
 
         .absensi-buttons {
@@ -474,19 +543,20 @@
             text-decoration: none;
             font-size: 1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(30, 132, 73, 0.4);
+            box-shadow: 0 4px 15px rgba(26, 58, 58, 0.3);
             display: inline-flex;
             align-items: center;
             gap: 8px;
         }
 
         .btn-absensi:hover {
+            background: var(--secondary);
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(30, 132, 73, 0.6);
+            box-shadow: 0 8px 20px rgba(26, 58, 58, 0.4);
         }
 
         .btn-secondary {
-            background: var(--light);
+            background: var(--light-bg);
             color: var(--primary);
             border: 2px solid var(--primary);
         }
@@ -541,7 +611,7 @@
         }
 
         .elearning-feature {
-            background: var(--light);
+            background: var(--light-bg);
             padding: 20px;
             border-radius: 12px;
             text-align: center;
@@ -567,40 +637,6 @@
             margin-top: 30px;
         }
 
-        .demo-account-title {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .account-role {
-            background: #dcfce7;
-            color: #166534;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        .account-info {
-            background: white;
-            border-radius: 12px;
-            padding: 18px;
-            margin-bottom: 15px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .account-detail {
-            margin-bottom: 8px;
-            font-size: 1rem;
-        }
-
         .account-detail strong {
             color: var(--primary);
             min-width: 70px;
@@ -616,7 +652,7 @@
             text-decoration: none;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(22, 160, 133, 0.4);
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -625,7 +661,7 @@
 
         .btn-elearning:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(22, 160, 133, 0.6);
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.6);
         }
 
         /* === BELL SEKOLAH IOT === */
@@ -639,13 +675,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 30px;
+            gap: 40px;
         }
 
         .bell-images {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+            gap: 20px;
             width: 100%;
         }
 
@@ -667,45 +703,128 @@
             display: block;
         }
 
-        .bell-features {
+        /* Bell Features Grid - 4 Kolom */
+        .bell-features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             width: 100%;
-            max-width: 800px;
         }
 
-        .bell-feature {
-            background: var(--light);
-            padding: 20px;
+        .bell-feature-card {
+            background: white;
             border-radius: 12px;
+            padding: 25px 20px;
             text-align: center;
-        }
-
-        .bell-feature i {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .btn-bell {
-            background: var(--accent);
-            color: white;
-            font-weight: 600;
-            padding: 16px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bell-feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .bell-feature-card.demo-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px dashed #adb5bd;
+        }
+
+        .bell-feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, #2a5d5d 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .bell-feature-card.demo-card .bell-feature-icon {
+            background: linear-gradient(135deg, #495057 0%, #6c757d 100%);
+        }
+
+        .bell-feature-card h4 {
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-size: 1.1rem;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bell-feature-card p {
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .bell-feature-card .demo-credentials {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border: 1px solid #e2e8f0;
+            width: 100%;
+        }
+
+        .bell-feature-card .demo-credentials div {
+            padding: 3px 0;
+            text-align: left;
+            font-size: 0.85rem;
+        }
+
+        .bell-feature-card .demo-credentials strong {
+            color: var(--primary);
+            display: inline-block;
+            width: 70px;
+        }
+
+        .bell-feature-card .account-note {
+            color: #718096 !important;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        /* Tombol Bell */
+        .btn-bell {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
+            background: linear-gradient(135deg, var(--accent) 0%, #e67e22 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-bell:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
+            color: white;
+            opacity: 0.9;
         }
 
         /* === KONTAK === */
@@ -780,9 +899,6 @@
             flex-wrap: wrap;
             margin-top: 30px;
             justify-content: center;
-            /* Untuk horizontal center */
-            align-items: center;
-            /* Untuk vertical center (jika ada height) */
         }
 
         .btn-submit:hover {
@@ -836,6 +952,23 @@
         }
 
         /* === RESPONSIVE === */
+        @media (max-width: 992px) {
+            .absensi-grid,
+            .elearning-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .bell-features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .bell-images {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             nav ul {
                 position: fixed;
@@ -905,9 +1038,8 @@
                 padding: 25px 20px;
             }
 
-            .absensi-gallery,
-            .elearning-gallery,
-            .bell-gallery {
+            .absensi-images,
+            .elearning-images {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
@@ -919,6 +1051,24 @@
 
             .contact-container {
                 padding: 25px 20px;
+            }
+            
+            .bell-features-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .bell-images {
+                grid-template-columns: 1fr;
+            }
+            
+            .bell-feature-card {
+                padding: 20px 15px;
+            }
+            
+            .bell-feature-card h4 {
+                min-height: auto;
+                margin-bottom: 15px;
             }
         }
 
@@ -944,6 +1094,19 @@
                 margin: 10px auto;
                 width: 90%;
                 text-align: center;
+            }
+            
+            .absensi-buttons,
+            .presensi-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .btn-absensi,
+            .btn-elearning,
+            .btn-bell {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -1088,8 +1251,8 @@
         </div>
     </section>
 
-    <!-- ABSENSI DIGITAL PREVIEW -->
-    <section id="absensi" class="reveal">
+    <!-- ABSENSI DIGITAL -->
+    <section id="absensi" class="section reveal">
         <div class="container">
             <div class="section-title">
                 <h2>Absensi Digital Sekolah</h2>
@@ -1097,16 +1260,40 @@
             </div>
             <div class="absensi-container">
                 <div class="absensi-grid">
-                    <!-- Video Promo Instagram -->
+                    <!-- Video Promo Google Drive -->
                     <div>
                         <h3 class="demo-account-title">
-                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-youtube"></i>
                             Video Demo Absensi Digital
                         </h3>
-                        <div class="instagram-embed-container">
-                            <iframe src="https://www.instagram.com/reel/DUDQi1JD16c/embed/" frameborder="0"
-                                scrolling="no" allowtransparency="true" allowfullscreen>
+                        
+                        <div class="gdrive-video-container">
+                            <iframe src="https://drive.google.com/file/d/1VKsXNTbwuXER6rPFsSoDlGl4jK0vHlPg/preview"
+                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
                             </iframe>
+                        </div>
+                        
+                        <!-- Demo Account for Absensi -->
+                        <div class="demo-account-box-absensi">
+                            <h3 class="demo-account-title">
+                                <i class="fas fa-key"></i>
+                                Akun Demo Testing
+                            </h3>
+                            
+                            <div class="account-info">
+                                <span class="account-role">Administrator</span>
+                                <div class="account-detail">
+                                    <strong>Username:</strong> admin
+                                </div>
+                                <div class="account-detail">
+                                    <strong>Password:</strong> admin
+                                </div>
+                            </div>
+                            
+                            <p class="account-note">
+                                <i class="fas fa-info-circle"></i>
+                                Gunakan akun ini untuk mencoba fitur admin di aplikasi absensi
+                            </p>
                         </div>
                     </div>
 
@@ -1127,30 +1314,27 @@
                         </div>
 
                         <div class="feature-item">
-                            <i class="fas fa-clock"></i>
+                            <i class="fas fa-chart-line"></i>
                             <div>
-                                <h4>Real-time Monitoring</h4>
-                                <p>Pantau kehadiran siswa secara langsung</p>
+                                <h4>Laporan Detail</h4>
+                                <p>Analisis kehadiran dengan grafik dan statistik</p>
                             </div>
                         </div>
 
                         <div class="feature-item">
-                            <i class="fas fa-bell"></i>
+                            <i class="fas fa-mobile-alt"></i>
                             <div>
-                                <h4>Notifikasi Orang Tua</h4>
-                                <p>Notifikasi langsung via WhatsApp/Email</p>
+                                <h4>Akses Mobile</h4>
+                                <p>Akses aplikasi melalui smartphone</p>
                             </div>
                         </div>
 
+
                         <div class="absensi-buttons">
-                            <a href="https://sekolahpintar.my/mimaarifgrabag1/presensi/" target="_blank"
+                            <a href="https://sekolahpintar.my/smpislamsarbini/presensi/" target="_blank"
                                 class="btn-absensi">
                                 <i class="fas fa-external-link-alt"></i>
                                 Buka Aplikasi Absensi
-                            </a>
-                            <a href="#contact" class="btn-absensi btn-secondary">
-                                <i class="fas fa-info-circle"></i>
-                                Info Lebih Lanjut
                             </a>
                         </div>
                     </div>
@@ -1159,8 +1343,8 @@
         </div>
     </section>
 
-    <!-- E-LEARNING PREVIEW -->
-    <section id="elearning" class="reveal">
+    <!-- E-LEARNING -->
+    <section id="elearning" class="section bg-light reveal">
         <div class="container">
             <div class="section-title">
                 <h2>E-Learning Sekolah</h2>
@@ -1201,7 +1385,6 @@
                                 <p>Pantau perkembangan belajar</p>
                             </div>
                         </div>
-
                     </div>
 
                     <!-- Akun Demo -->
@@ -1234,7 +1417,7 @@
                                 </div>
                             </div>
 
-                            <p class="account-detail" style="font-size: 0.9rem; margin-top: 15px; color: var(--gray);">
+                            <p class="account-note">
                                 <i class="fas fa-info-circle"></i>
                                 Gunakan akun demo di atas untuk login dan menjelajahi fitur-fitur platform E-Learning.
                             </p>
@@ -1251,8 +1434,8 @@
         </div>
     </section>
 
-    <!-- BELL SEKOLAH IOT PREVIEW -->
-    <section id="bell-iot" class="reveal">
+    <!-- BELL SEKOLAH IOT -->
+    <section id="bell-iot" class="section reveal">
         <div class="container">
             <div class="section-title">
                 <h2>Bell Sekolah Otomatis (IoT)</h2>
@@ -1271,21 +1454,45 @@
                     </div>
                 </div>
 
-                <div class="bell-features">
-                    <div class="bell-feature">
-                        <i class="fas fa-clock"></i>
+                <!-- Fitur-fitur dalam grid 4 kolom -->
+                <div class="bell-features-grid">
+                    <div class="bell-feature-card">
+                        <div class="bell-feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
                         <h4>Jadwal Fleksibel</h4>
-                        <p>Atur jadwal bel sesuai kebutuhan</p>
+                        <p>Atur jadwal bel sesuai kebutuhan pembelajaran</p>
                     </div>
-                    <div class="bell-feature">
-                        <i class="fas fa-wifi"></i>
+                    
+                    <div class="bell-feature-card">
+                        <div class="bell-feature-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
                         <h4>Kontrol Online</h4>
-                        <p>Kendalikan dari smartphone/PC</p>
+                        <p>Kendalikan dari smartphone atau komputer</p>
                     </div>
-                    <div class="bell-feature">
-                        <i class="fas fa-bell"></i>
+                    
+                    <div class="bell-feature-card">
+                        <div class="bell-feature-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
                         <h4>Multiple Sound</h4>
                         <p>Berbagai pilihan suara bel</p>
+                    </div>
+                    
+                    <div class="bell-feature-card demo-card">
+                        <div class="bell-feature-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <h4>Akun Demo Testing</h4>
+                        <div class="demo-credentials">
+                            <div><strong>Username:</strong> admin</div>
+                            <div><strong>Password:</strong> admin</div>
+                        </div>
+                        <p class="account-note">
+                            <i class="fas fa-info-circle"></i>
+                            Gunakan untuk mencoba fitur admin
+                        </p>
                     </div>
                 </div>
 
